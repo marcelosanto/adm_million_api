@@ -1,9 +1,11 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
+
+var HomeController = require('../app/controllers/HomeController')
+var AdmController = require('../app/controllers/AdmController')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', HomeController.index)
+router.get('/adm.json', AdmController.index)
 
-module.exports = router;
+module.exports = router
